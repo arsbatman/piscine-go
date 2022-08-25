@@ -1,16 +1,19 @@
 package main
 
-import (
-	"github.com/01-edu/z01"
-
-	"piscine"
-)
+import "piscine"
 
 func main() {
-	z01.PrintRune(piscine.NRune("Hello!", 3))
-	z01.PrintRune(piscine.NRune("Salut!", 2))
-	z01.PrintRune(piscine.NRune("Bye!", -1))
-	z01.PrintRune(piscine.NRune("Bye!", 5))
-	z01.PrintRune(piscine.NRune("Ola!", 4))
-	z01.PrintRune('\n')
+	mul := func(acc int, cur int) int {
+		return acc * cur
+	}
+	sum := func(acc int, cur int) int {
+		return acc + cur
+	}
+	div := func(acc int, cur int) int {
+		return acc / cur
+	}
+	as := []int{500, 2}
+	piscine.ReduceInt(as, mul)
+	piscine.ReduceInt(as, sum)
+	piscine.ReduceInt(as, div)
 }
